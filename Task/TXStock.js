@@ -12,7 +12,7 @@ let signday = formatDateTime(new Date());
 
 let tz = '';
 //let cash = $.getval('cash') || 5; //0为不自动提现,1为自动提现1元,5为自动提现5元
-let cash =5;
+let cash = 1;
 //time
 var hour='';
 var minute='';
@@ -247,7 +247,7 @@ async function txstock(){
   await wxtask8();
   await wxtask9();
   await wxtask10();
-  await wxtask11();
+  //await wxtask11();
   console.log(`\n✅ 执行【自动提现】任务\n`)
   await cashorder(cash, money);
 }
