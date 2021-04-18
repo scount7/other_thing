@@ -6,8 +6,9 @@ name: 笑谱
 on:
   workflow_dispatch:
   schedule:
-     - cron: '15 0-15/2 * * *'
-
+     - cron: '15 0-14/2 * * *'
+  watch:
+    types: started
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -20,7 +21,8 @@ jobs:
         XP_live: ${{ secrets.XP_live }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        run: |
+          git clone -b main https://github.com/Maomaoyu0319/Ziye.git ~/Ziye
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
@@ -33,13 +35,13 @@ jobs:
           path: node_modules
           key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('package-lock.json') }} # 使用 package-lock.json 的 Hash 作为缓存的 key。也可以使用 package.json 代替
       - name: npm install
-      
         run: |
+          cd ~/Ziye
           npm install
       - name: '运行 【笑谱】'
         if: env.XP_refreshTOKEN
-        
         run: |
+          cd ~/Ziye
           node Task/iboxpay.js
         env:
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
