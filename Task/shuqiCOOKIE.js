@@ -21,7 +21,7 @@ boxjs链接  https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/ziye.boxjs
 
 */
 
-modulees = 3 //1 选择方式一 2 选择方式二 3 选择方式三
+modulees = 2 //1 选择方式一 2 选择方式二 3 选择方式三
 
 
 
