@@ -11,8 +11,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id
-    env:
-        SQ_shuqiuserURL: ${{ secrets.SQ_shuqiuserURL }} 
+    
     steps:
       - uses: actions/checkout@v1
       - name: Use Node.js 12.x
@@ -23,6 +22,5 @@ jobs:
         run: |
           npm install
       - name: '运行 【书旗小说】'
-        if: env.SQ_shuqiuserURL
         run: |
           node Task/shuqi.js
