@@ -37,4 +37,3 @@ jobs:
         run: |
           cd ~/Ziye
           node Task/shuqi.js
-
