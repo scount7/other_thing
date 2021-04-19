@@ -34,5 +34,7 @@ jobs:
           npm install
       - name: '运行 【书旗小说】'
         if: env.SQ_shuqiuserURL
+        run: |
           cd ~/Ziye
           node Task/shuqi.js
+
