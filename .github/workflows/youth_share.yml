@@ -1,14 +1,14 @@
-
 name: 中青分享
 
 on:
   workflow_dispatch:
+  watch:
+    types: started
   schedule:
-     - cron: '10 9,19 * * *'
+    - cron: '10 0,10 * * *'
 jobs:
   build:
-    runs-on: ubuntu-latest    
-    if: github.event.repository.owner.id == github.event.sender.id
+    runs-on: ubuntu-latest       
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -21,6 +21,7 @@ jobs:
           npm install
           npm install cron
           npm install request
+          npm install md5-node
       - name: '运行 【中青分享】'
         run: |
           node Task/youth_share.js
