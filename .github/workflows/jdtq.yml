@@ -4,7 +4,7 @@ name: 简单天气
 on:
   workflow_dispatch:
   schedule:
-     - cron: '5,35 0-16,21-23 * * *'
+     - cron: '5,35 0-14,21-23 * * *'
   watch:
     types: started
 jobs:
