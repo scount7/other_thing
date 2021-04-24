@@ -19,7 +19,7 @@ jobs:
     steps:
       - name: Checkout
         run: |
-          git clone -b main https://github.com/zzzoen/Ziye.git ~/Ziye
+          git clone -b main https://github.com/zzoen/Ziye.git ~/Ziye
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
