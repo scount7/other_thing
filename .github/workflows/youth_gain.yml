@@ -3,7 +3,7 @@ name: 中青浏览赚&看看赚
 on:
   workflow_dispatch:
   schedule:
-     - cron: '5 0 * * *'
+     - cron: '0 22 * * *'
   watch:
     types: started
 
