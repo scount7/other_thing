@@ -8,15 +8,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Sunert/Scripts.git"
+    "url": "git+https://github.com/Sunert/Script.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Sunert/Scripts/issues"
+    "url": "https://github.com/Sunert/Script/issues"
   },
-  "homepage": "https://github.com/Sunert/Scripts#readme",
+  "homepage": "https://github.com/Sunert/Script#readme",
   "dependencies": {
     "crypto-js": "^4.0.0",
     "got": "^11.7.0",
