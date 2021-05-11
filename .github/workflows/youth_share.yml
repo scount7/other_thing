@@ -6,7 +6,7 @@ on:
   schedule:
      - cron: '10 4 * * *'
   watch:
-    types: started
+    types: youth_share
 
 jobs:
   build:
