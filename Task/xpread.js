@@ -15,6 +15,19 @@ boxjs：https://raw.githubusercontent.com/Ariszy/Private-Script/master/Ariszy.bo
 
 具体多大毛不知道，初步估计运行一次ok，0.5元左右，调整每次阅读延时25秒，为阅读20s➕跳转5s，手动阅读20s完成任务，故设置为20s，运行一次时间很长，请注意
 
+[mitm]
+hostname = lrqd.wasair.com
+
+#quanx
+[rewrite local]
+https://lrqd.wasair.com/advert/task/news/list url script-request-header https://raw.githubusercontent.com/Ariszy/Private-Script/master/Scripts/xpread.js
+
+#loon
+http-request https://lrqd.wasair.com/advert/task/news/list script-path=https://raw.githubusercontent.com/Ariszy/Private-Script/master/Scripts/xpread.js, requires-body=true, timeout=10, tag=笑谱阅读
+
+
+#surge
+笑谱阅读 = type=http-request,pattern=https://lrqd.wasair.com/advert/task/news/list,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Ariszy/Private-Script/master/Scripts/xpread.js,script-update-interval=0
 */
 const Ariszy = '笑谱阅读'
 const $ = Env(Ariszy)
@@ -29,7 +42,7 @@ let xpreadCookie = $.getdata('xpreadCookie')
 var xpreadtaskId = 15;
 var newscid = 11;
 let tz = ($.getval('tz') || '1');//0关闭通知，1默认开启
-const invite=0;//新用户自动邀请，0关闭，1默认开启
+const invite=1;//新用户自动邀请，0关闭，1默认开启
 const logs =0;//0为关闭日志，1为开启
 var hour=''
 var minute=''
@@ -196,7 +209,7 @@ async function newscomplete(){
         }else if(result.errorCode == 10331){
            $.log("😫"+result.errorMsg+"\n")
            await cash()
-           $done();
+           $.done();
         }else{
            $.log("😫"+result.errorMsg+"\n")
         }
