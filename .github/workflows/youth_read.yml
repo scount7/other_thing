@@ -1,12 +1,12 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
-# 每日早8点到晚8点每6小时运行一次
+# 每日运行两次
 
-name: 中青自动阅读
+name: 中青看点阅读
 
 on:
   workflow_dispatch:
   schedule:
-     - cron: '0 22,1 * * *'
+     - cron: '0 23,2 * * *'
   watch:
     types: started
 jobs:
@@ -32,7 +32,7 @@ jobs:
         run: |
           npm install
           
-      - name: '运行 【中青看点自动阅读一】'
+      - name: '运行 【中青看点阅读一】'
         if: env.YOUTH_READ
         run: |
           node Task/Youth_Read.js
@@ -40,7 +40,7 @@ jobs:
           YOUTH_READ: ${{ secrets.YOUTH_READ }}
           YOUTH_ATIME: ${{ secrets.YOUTH_ATIME }}
 
-      - name: '运行 【中青看点自动阅读二】'
+      - name: '运行 【中青看点阅读二】'
         if: env.YOUTH_READ2
         run: |
           node Task/Youth_Read.js
@@ -48,7 +48,7 @@ jobs:
           YOUTH_READ: ${{ secrets.YOUTH_READ2 }}
           YOUTH_ATIME: ${{ secrets.YOUTH_ATIME2 }}
           
-      - name: '运行 【中青看点自动阅读三】'
+      - name: '运行 【中青看点阅读三】'
         if: env.YOUTH_READ3
         run: |
           node Task/Youth_Read.js
@@ -56,7 +56,7 @@ jobs:
           YOUTH_READ: ${{ secrets.YOUTH_READ3 }}
           YOUTH_ATIME: ${{ secrets.YOUTH_ATIME3 }}
           
-      - name: '运行 【中青看点自动阅读四】'
+      - name: '运行 【中青看点阅读四】'
         if: env.YOUTH_READ4
         run: |
           node Task/Youth_Read.js
@@ -64,7 +64,7 @@ jobs:
           YOUTH_READ: ${{ secrets.YOUTH_READ4 }}
           YOUTH_ATIME: ${{ secrets.YOUTH_ATIME4 }}
 
-      - name: '运行 【中青看点自动阅读五】'
+      - name: '运行 【中青看点阅读五】'
         if: env.YOUTH_READ5
         run: |
           node Task/Youth_Read.js
@@ -72,7 +72,7 @@ jobs:
           YOUTH_READ: ${{ secrets.YOUTH_READ5 }}
           YOUTH_ATIME: ${{ secrets.YOUTH_ATIME5 }}
           
-      - name: '运行 【中青看点自动阅读六】'
+      - name: '运行 【中青看点阅读六】'
         if: env.YOUTH_READ6
         run: |
           node Task/Youth_Read.js
