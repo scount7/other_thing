@@ -274,7 +274,7 @@ let url = {
         if(result.code == 0){
 
         console.log('\n西梅用户信息获取成功\n当前梅子:'+result.data.point+'\n当前金币:'+result.data.coin)
-if(result.data.point >=200){
+if(result.data.point >=100){
 $.log('西梅-检测到当前梅子可提现,执行提现任务')
 await ximeitx();
 }
@@ -299,7 +299,7 @@ function ximeitx(timeout = 0) {
 let url = {
         url : "https://app.hubonews.com/v1/credit/cashout/apply",
         headers : JSON.parse(ximeihd),
-        body : `{"cashout_credits":200,"assets_type":0}`,
+        body : `{"cashout_credits":100,"assets_type":0}`,
 }
       $.post(url, async (err, resp, data) => {
 
