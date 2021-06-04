@@ -4,7 +4,7 @@ name: 百度极速版
 on:
   workflow_dispatch:
   schedule:
-     - cron: '30 18-23 * * *'
+     - cron: '30 10-15 * * *'
   watch:
     types: baidu_speed
 jobs:
