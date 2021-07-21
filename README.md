@@ -6,4 +6,3 @@
 [@ZIYE](https://github.com/ziye888)
 [@CenBoMin](https://github.com/CenBoMin/GithubSync)
 [@Sunert](https://github.com/Sunert)
-[@肥皂](https://github.com/age174/-)
