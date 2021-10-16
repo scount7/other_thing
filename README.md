@@ -1,4 +1,4 @@
- ⚠️不要 Fork和 Sync仓库! ！！部分js有个人的ck，谢谢合作🙏
+同步自https://github.com/iceparis/Scripts
 
 
 饮水思源，特别感谢：
