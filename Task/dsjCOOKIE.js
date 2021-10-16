@@ -1,2 +1,9 @@
-//boxjs粘贴会话至{}
-module.exports ={}
+let dsjheaderVal= ``
+
+
+let dsjcookie = { 
+      dsjheaderVal: dsjheaderVal,   
+  
+}
+
+module.exports =  dsjcookie
