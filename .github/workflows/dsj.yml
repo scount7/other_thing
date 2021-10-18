@@ -3,7 +3,7 @@ name: 电视家
 on:
   workflow_dispatch:
   schedule:
-     - cron: '15 4-18 * * *'
+     - cron: '15 0-7,16-23 * * *'
   watch:
     types: started
 jobs:
