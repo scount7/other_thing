@@ -22,7 +22,7 @@ jobs:
           npm install
       - name: '运行【电视家】'     
         run: |
-          node Task/dsj2.js
+          node Task/dsj.js
         env:
           DSJ_dsjHEADER: ${{ secrets.DSJ_dsjHEADER }}
           TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
